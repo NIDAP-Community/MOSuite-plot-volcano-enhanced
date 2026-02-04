@@ -1,6 +1,6 @@
-# MOSuite-plot-pca-2D
+# MOSuite-plot-volcano-enhanced
 
-Code Ocean capsule: MOSuite - plot 2D PCA
+Code Ocean capsule: MOSuite - Plot Volcano Enhanced
 
-- [Code Ocean Capsule](https://poc-nci.codeocean.io/capsule/0166328/tree)
+- [Code Ocean Capsule](https://poc-nci.codeocean.io/capsule/TODO/tree)
 - [MOSuite R package docs](https://ccbr.github.io/MOSuite/)

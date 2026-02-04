@@ -1,4 +1,4 @@
-# Code Ocean capsule - MOSuite - plot 2D PCA
+# Code Ocean capsule - MOSuite - Plot Volcano Enhanced
 
 ## v1.0
 
