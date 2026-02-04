@@ -7,7 +7,7 @@
 	},
 	"datasets": [
 		{
-			"id": "82dccbec-cdd6-4d7f-a610-9cea832e4a8f",
+			"id": "318a2347-25cb-4210-9c1b-f9736f450deb",
 			"name": "multiOmicDataSet"
 		}
 	],
@@ -133,16 +133,6 @@
 			"value_type": "string"
 		},
 		{
-			"id": "is_red_id",
-			"category": "PlotStyling",
-			"name": "Highlight significant points in red",
-			"param_name": "is_red",
-			"description": "If TRUE, highlights points meeting significance and fold change criteria in red",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "TRUE"
-		},
-		{
 			"id": "lab_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Label size",
@@ -240,6 +230,16 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "24"
+		},
+		{
+			"id": "is_red_id",
+			"category": "PlotStyling",
+			"name": "Highlight significant points in red",
+			"param_name": "is_red",
+			"description": "If TRUE, highlights points meeting significance and fold change criteria in red",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "TRUE"
 		},
 		{
 			"id": "point_size_id",
