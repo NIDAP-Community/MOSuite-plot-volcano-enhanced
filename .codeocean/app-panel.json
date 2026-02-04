@@ -1,0 +1,310 @@
+{
+	"version": 1,
+	"named_parameters": true,
+	"general": {
+		"title": "MOSuite - plot Volcano Enhanced",
+		"instructions": "Create enhanced volcano plots from differential expression analysis results to visualize fold change and statistical significance"
+	},
+	"datasets": [
+		{
+			"id": "82dccbec-cdd6-4d7f-a610-9cea832e4a8f",
+			"name": "multiOmicDataSet"
+		}
+	],
+	"categories": [
+		{
+			"id": "7Rr6IxOMDucKMImp",
+			"name": "Input data parameters",
+			"icon": "📂"
+		},
+		{
+			"id": "EzTg1ivlFDHEy9PI",
+			"name": "Volcano Plot Settings",
+			"icon": "📂"
+		},
+		{
+			"id": "FvI4Z2eb9sjL47Jt",
+			"name": "Axis and Labels",
+			"icon": "📂"
+		},
+		{
+			"id": "PlotStyling",
+			"name": "Plot Styling",
+			"icon": "📂"
+		}
+	],
+	"parameters": [
+		{
+			"id": "ZvGNzbTfFDAiJ8Lv",
+			"category": "7Rr6IxOMDucKMImp",
+			"name": "multiOmicDataSet file pattern",
+			"param_name": "regex_moo",
+			"description": "Regex pattern used to locate the multiOmicDataSet .rds file",
+			"type": "text",
+			"value_type": "string",
+			"default_value": ".*\\\\.rds$"
+		},
+		{
+			"id": "feature_id_colname_id",
+			"category": "7Rr6IxOMDucKMImp",
+			"name": "Feature ID column name",
+			"param_name": "feature_id_colname",
+			"description": "Column name for feature IDs (gene names, etc). If not provided, uses first column",
+			"type": "text",
+			"value_type": "string"
+		},
+		{
+			"id": "signif_colname_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Significance column names",
+			"param_name": "signif_colname",
+			"description": "Column names of significance values (comma-separated). Example: B-A_adjpval,B-C_adjpval",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "B-A_adjpval,B-C_adjpval"
+		},
+		{
+			"id": "signif_threshold_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Significance threshold",
+			"param_name": "signif_threshold",
+			"description": "Significance cutoff for p-values (FDR, adjusted p-value, etc.)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "0.05"
+		},
+		{
+			"id": "change_colname_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Fold change column names",
+			"param_name": "change_colname",
+			"description": "Column names of fold change values (comma-separated). Example: B-A_logFC,B-C_logFC",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "B-A_logFC,B-C_logFC"
+		},
+		{
+			"id": "change_threshold_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Fold change threshold",
+			"param_name": "change_threshold",
+			"description": "Fold change cutoff for significance (log scale)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "1.0"
+		},
+		{
+			"id": "value_to_sort_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Sort output by",
+			"param_name": "value_to_sort_the_output_dataset",
+			"description": "How to sort output dataset: 'p-value' or 'fold-change'",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "p-value"
+		},
+		{
+			"id": "num_features_to_label_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Number of features to label",
+			"param_name": "num_features_to_label",
+			"description": "Number of top features/genes to label in the volcano plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "30"
+		},
+		{
+			"id": "use_only_addition_labels_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Use only additional labels",
+			"param_name": "use_only_addition_labels",
+			"description": "If TRUE, only the additional labels specified will be used, ignoring the top features",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "FALSE"
+		},
+		{
+			"id": "additional_labels_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Additional feature labels",
+			"param_name": "additional_labels",
+			"description": "Comma-separated feature names or IDs to include in the volcano plot",
+			"type": "text",
+			"value_type": "string"
+		},
+		{
+			"id": "is_red_id",
+			"category": "PlotStyling",
+			"name": "Highlight significant points in red",
+			"param_name": "is_red",
+			"description": "If TRUE, highlights points meeting significance and fold change criteria in red",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "TRUE"
+		},
+		{
+			"id": "lab_size_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Label size",
+			"param_name": "lab_size",
+			"description": "Size of the labels in the volcano plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "4"
+		},
+		{
+			"id": "change_sig_name_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Significance axis label",
+			"param_name": "change_sig_name",
+			"description": "Name for the significance column in the plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "p-value"
+		},
+		{
+			"id": "change_lfc_name_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Fold change axis label",
+			"param_name": "change_lfc_name",
+			"description": "Name for the fold change column in the plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "log2FC"
+		},
+		{
+			"id": "title_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Plot title",
+			"param_name": "title",
+			"description": "Title of the plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "Volcano Plots"
+		},
+		{
+			"id": "use_custom_lab_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Use custom labels",
+			"param_name": "use_custom_lab",
+			"description": "If TRUE, uses custom labels for plot axes",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "FALSE"
+		},
+		{
+			"id": "ylim_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Y-axis limit",
+			"param_name": "ylim",
+			"description": "Y-axis limits for the plot (0 = auto)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "0"
+		},
+		{
+			"id": "custom_xlim_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Custom X-axis limits",
+			"param_name": "custom_xlim",
+			"description": "Custom X-axis limits (e.g., -5,5 or empty for auto)",
+			"type": "text",
+			"value_type": "string"
+		},
+		{
+			"id": "xlim_additional_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "X-axis limit padding",
+			"param_name": "xlim_additional",
+			"description": "Additional space to add to the X-axis limits",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "0"
+		},
+		{
+			"id": "ylim_additional_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Y-axis limit padding",
+			"param_name": "ylim_additional",
+			"description": "Additional space to add to the Y-axis limits",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "0"
+		},
+		{
+			"id": "axis_lab_size_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Axis label size",
+			"param_name": "axis_lab_size",
+			"description": "Size of the axis labels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "24"
+		},
+		{
+			"id": "point_size_id",
+			"category": "PlotStyling",
+			"name": "Point size",
+			"param_name": "point_size",
+			"description": "Size of the points in the plot",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "2"
+		},
+		{
+			"id": "image_width_id",
+			"category": "PlotStyling",
+			"name": "Image width (pixels)",
+			"param_name": "image_width",
+			"description": "Output image width in pixels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "3000"
+		},
+		{
+			"id": "image_height_id",
+			"category": "PlotStyling",
+			"name": "Image height (pixels)",
+			"param_name": "image_height",
+			"description": "Output image height in pixels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "3000"
+		},
+		{
+			"id": "dpi_id",
+			"category": "PlotStyling",
+			"name": "DPI",
+			"param_name": "dpi",
+			"description": "Dots per inch of the output image",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "300"
+		},
+		{
+			"id": "interactive_plots_id",
+			"category": "PlotStyling",
+			"name": "Interactive plots",
+			"param_name": "interactive_plots",
+			"description": "Whether to create interactive plotly plots",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "FALSE"
+		},
+		{
+			"id": "plot_filename_id",
+			"category": "PlotStyling",
+			"name": "Plot filename",
+			"param_name": "plot_filename",
+			"description": "Plot output filename",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "volcano_enhanced.png"
+		}
+	],
+	"results": [
+		{
+			"file_name": "figures/diff/volcano_enhanced.png"
+		}
+	]
+}
