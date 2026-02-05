@@ -2,6 +2,8 @@
 
 ## development version
 
+- Standardize app parameters across MOSuite capsules.
+
 ## v1.0
 
 Initial release
