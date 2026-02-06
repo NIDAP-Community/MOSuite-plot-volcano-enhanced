@@ -1,7 +1,8 @@
 # Code Ocean capsule - MOSuite - Plot Volcano Enhanced
 
-## development version
+## v2.0
 
+- Use MOSuite v0.3.0
 - Standardize app parameters across MOSuite capsules.
 
 ## v1.0
