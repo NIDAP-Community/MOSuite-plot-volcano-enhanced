@@ -45,25 +45,50 @@ test_that("enhanced volcano capsule keeps expected CLI parameter contract", {
 
   expect_same_values(extract_main_arguments(main_lines), expected_args)
   expect_match(main_text, "plot_volcano_enhanced\\(")
-  expect_match(main_text, "signif_colname = parse_optional_vector\\(args\\$signif_colname\\)")
-  expect_match(main_text, "change_colname = parse_optional_vector\\(args\\$change_colname\\)")
+  expect_match(
+    main_text,
+    "signif_colname = parse_optional_vector\\(args\\$signif_colname\\)"
+  )
+  expect_match(
+    main_text,
+    "change_colname = parse_optional_vector\\(args\\$change_colname\\)"
+  )
 })
 
 test_that("Code Ocean panel preserves enhanced volcano defaults", {
   panel_lines <- read_repo_file(".codeocean", "app-panel.json")
 
-  expect_equal(extract_panel_default(panel_lines, "signif_colname"), "B-A_adjpval,B-C_adjpval")
-  expect_equal(extract_panel_default(panel_lines, "change_colname"), "B-A_logFC,B-C_logFC")
-  expect_equal(extract_panel_default(panel_lines, "value_to_sort_the_output_dataset"), "p-value")
-  expect_equal(extract_panel_default(panel_lines, "num_features_to_label"), "30")
+  expect_equal(
+    extract_panel_default(panel_lines, "signif_colname"),
+    "B-A_adjpval,B-C_adjpval"
+  )
+  expect_equal(
+    extract_panel_default(panel_lines, "change_colname"),
+    "B-A_logFC,B-C_logFC"
+  )
+  expect_equal(
+    extract_panel_default(panel_lines, "value_to_sort_the_output_dataset"),
+    "p-value"
+  )
+  expect_equal(
+    extract_panel_default(panel_lines, "num_features_to_label"),
+    "30"
+  )
   expect_equal(extract_panel_default(panel_lines, "title"), "Volcano Plots")
-  expect_equal(extract_panel_default(panel_lines, "plot_filename"), "volcano_enhanced.png")
+  expect_equal(
+    extract_panel_default(panel_lines, "plot_filename"),
+    "volcano_enhanced.png"
+  )
 })
 
 test_that("Code Ocean boolean controls are TRUE/FALSE lists", {
   panel_lines <- read_repo_file(".codeocean", "app-panel.json")
 
-  expect_boolean_list_parameter(panel_lines, "use_only_addition_labels", "FALSE")
+  expect_boolean_list_parameter(
+    panel_lines,
+    "use_only_addition_labels",
+    "FALSE"
+  )
   expect_boolean_list_parameter(panel_lines, "is_red", "TRUE")
   expect_boolean_list_parameter(panel_lines, "use_custom_lab", "FALSE")
   expect_boolean_list_parameter(panel_lines, "interactive_plots", "FALSE")
