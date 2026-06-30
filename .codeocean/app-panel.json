@@ -112,9 +112,13 @@
 			"name": "Use only additional labels",
 			"param_name": "use_only_addition_labels",
 			"description": "If TRUE, only the additional labels specified will be used, ignoring the top features",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "FALSE"
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "additional_labels_id",
@@ -171,9 +175,13 @@
 			"name": "Use custom labels",
 			"param_name": "use_custom_lab",
 			"description": "If TRUE, uses custom labels for plot axes",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "FALSE"
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "ylim_id",
@@ -230,9 +238,13 @@
 			"name": "Highlight significant points in red",
 			"param_name": "is_red",
 			"description": "If TRUE, highlights points meeting significance and fold change criteria in red",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "TRUE"
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "point_size_id",
@@ -280,9 +292,13 @@
 			"name": "Interactive plots",
 			"param_name": "interactive_plots",
 			"description": "Whether to create interactive plotly plots",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "FALSE"
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "plot_filename_id",
