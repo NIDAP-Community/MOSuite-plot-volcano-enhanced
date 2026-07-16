@@ -2,7 +2,8 @@
 
 ## Development version
 
-- Improved the Code Ocean parameter UI for the plot volcano enhanced capsule (#1, @phoman14).
+- Improved the Code Ocean parameter UI for the plot volcano enhanced capsule. (#1, @phoman14)
+- Use MOSuite v0.3.2. (#2, @kelly-sovacool)
 
 ## v2.0
 
