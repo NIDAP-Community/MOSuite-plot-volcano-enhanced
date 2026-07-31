@@ -335,7 +335,7 @@
 			"category": "VisualizationGeneLabels",
 			"name": "Number of features to label",
 			"param_name": "num_features_to_label",
-			"description": "Number of top features or genes to label automatically in the volcano plot after sorting. Default in MOSuite is 30.",
+			"description": "Number of top features or genes to label automatically in the volcano plot after sorting. Default in MOSuite is 20.",
 			"type": "text",
 			"value_type": "string",
 			"default_value": "20"
