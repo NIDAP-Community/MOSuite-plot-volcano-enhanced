@@ -114,8 +114,14 @@ test_that("Code Ocean panel preserves enhanced volcano defaults", {
     "TRUE"
   )
   expect_equal(extract_panel_default(panel_lines, "label_font_size"), "5")
-  expect_equal(extract_panel_default(panel_lines, "default_label_color"), "black")
-  expect_equal(extract_panel_default(panel_lines, "custom_label_color"), "black")
+  expect_equal(
+    extract_panel_default(panel_lines, "default_label_color"),
+    "black"
+  )
+  expect_equal(
+    extract_panel_default(panel_lines, "custom_label_color"),
+    "black"
+  )
   expect_equal(extract_panel_default(panel_lines, "x_axis_limit"), "5")
   expect_equal(extract_panel_default(panel_lines, "y_axis_limit"), "10")
   expect_equal(extract_panel_default(panel_lines, "axis_tick_lab_size"), "16")
@@ -130,15 +136,24 @@ test_that("Code Ocean panel preserves enhanced volcano defaults", {
     "grey30"
   )
   expect_equal(
-    extract_panel_default(panel_lines, "color_of_logfold_change_threshold_line"),
+    extract_panel_default(
+      panel_lines,
+      "color_of_logfold_change_threshold_line"
+    ),
     "forestgreen"
   )
   expect_equal(
-    extract_panel_default(panel_lines, "color_of_features_meeting_only_signif_threshold"),
+    extract_panel_default(
+      panel_lines,
+      "color_of_features_meeting_only_signif_threshold"
+    ),
     "royalblue"
   )
   expect_equal(
-    extract_panel_default(panel_lines, "color_for_features_meeting_pvalue_and_foldchange_thresholds"),
+    extract_panel_default(
+      panel_lines,
+      "color_for_features_meeting_pvalue_and_foldchange_thresholds"
+    ),
     "red2"
   )
   expect_equal(
