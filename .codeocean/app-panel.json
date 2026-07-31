@@ -130,6 +130,20 @@
 			"value_type": "string"
 		},
 		{
+			"id": "label_significant_features_only_id",
+			"category": "PlotStyling",
+			"name": "Label significant features only",
+			"param_name": "label_significant_features_only",
+			"description": "Label only features that meet the significance and fold change thresholds",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
+		},
+		{
 			"id": "label_font_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Label font size",
@@ -140,6 +154,16 @@
 			"default_value": "5"
 		},
 		{
+			"id": "default_label_color_id",
+			"category": "PlotStyling",
+			"name": "Default label color",
+			"param_name": "default_label_color",
+			"description": "Color for automatically selected labels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "black"
+		},
+		{
 			"id": "custom_label_color_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Custom label color",
@@ -148,6 +172,20 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "black"
+		},
+		{
+			"id": "draw_connectors_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Draw label connector lines",
+			"param_name": "draw_connectors",
+			"description": "Draw connector lines from labels to their points",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "change_sig_name_id",
@@ -178,6 +216,16 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "Volcano Plots"
+		},
+		{
+			"id": "title_font_size_id",
+			"category": "PlotStyling",
+			"name": "Title font size",
+			"param_name": "title_font_size",
+			"description": "Size of the plot title",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "24"
 		},
 		{
 			"id": "use_custom_lab_id",
@@ -252,6 +300,16 @@
 			"default_value": "24"
 		},
 		{
+			"id": "axis_tick_lab_size_id",
+			"category": "PlotStyling",
+			"name": "Axis tick label size",
+			"param_name": "axis_tick_lab_size",
+			"description": "Size of axis tick labels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "16"
+		},
+		{
 			"id": "point_size_id",
 			"category": "PlotStyling",
 			"name": "Point size",
@@ -260,6 +318,56 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "2"
+		},
+		{
+			"id": "color_of_signif_threshold_line_id",
+			"category": "PlotStyling",
+			"name": "Significance threshold line color",
+			"param_name": "color_of_signif_threshold_line",
+			"description": "Color of the significance threshold line",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "black"
+		},
+		{
+			"id": "color_of_non_significant_features_id",
+			"category": "PlotStyling",
+			"name": "Non-significant feature color",
+			"param_name": "color_of_non_significant_features",
+			"description": "Color of non-significant features",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "grey30"
+		},
+		{
+			"id": "color_of_logfold_change_threshold_line_id",
+			"category": "PlotStyling",
+			"name": "Fold change threshold color",
+			"param_name": "color_of_logfold_change_threshold_line",
+			"description": "Color of features meeting only the fold change threshold",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "forestgreen"
+		},
+		{
+			"id": "color_of_features_meeting_only_signif_threshold_id",
+			"category": "PlotStyling",
+			"name": "Significance-only feature color",
+			"param_name": "color_of_features_meeting_only_signif_threshold",
+			"description": "Color of features meeting only the significance threshold",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "royalblue"
+		},
+		{
+			"id": "color_for_features_meeting_pvalue_and_foldchange_thresholds_id",
+			"category": "PlotStyling",
+			"name": "Significance and fold change feature color",
+			"param_name": "color_for_features_meeting_pvalue_and_foldchange_thresholds",
+			"description": "Color of features meeting both significance and fold change thresholds",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "red2"
 		},
 		{
 			"id": "image_width_id",
