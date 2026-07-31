@@ -22,16 +22,18 @@ test_that("enhanced volcano capsule keeps expected CLI parameter contract", {
     "change_threshold",
     "value_to_sort_the_output_dataset",
     "num_features_to_label",
-    "use_only_addition_labels",
-    "additional_labels",
-    "is_red",
-    "lab_size",
+    "label_features",
+    "custom_gene_list",
+    "label_font_size",
+    "custom_label_color",
     "change_sig_name",
     "change_lfc_name",
     "title",
     "use_custom_lab",
-    "ylim",
-    "custom_xlim",
+    "use_default_x_axis_limit",
+    "x_axis_limit",
+    "use_default_y_axis_limit",
+    "y_axis_limit",
     "axis_lab_size",
     "point_size",
     "image_width",
@@ -51,6 +53,20 @@ test_that("enhanced volcano capsule keeps expected CLI parameter contract", {
     main_text,
     "change_colname = parse_optional_vector\\(args\\$change_colname\\)"
   )
+  expect_match(main_text, "label_features = args\\$label_features")
+  expect_match(main_text, "custom_gene_list = args\\$custom_gene_list")
+  expect_match(main_text, "label_font_size = args\\$label_font_size")
+  expect_match(main_text, "custom_label_color = args\\$custom_label_color")
+  expect_match(
+    main_text,
+    "use_default_x_axis_limit = args\\$use_default_x_axis_limit"
+  )
+  expect_match(main_text, "x_axis_limit = args\\$x_axis_limit")
+  expect_match(
+    main_text,
+    "use_default_y_axis_limit = args\\$use_default_y_axis_limit"
+  )
+  expect_match(main_text, "y_axis_limit = args\\$y_axis_limit")
 })
 
 test_that("Code Ocean panel preserves enhanced volcano defaults", {
@@ -66,12 +82,16 @@ test_that("Code Ocean panel preserves enhanced volcano defaults", {
   )
   expect_equal(
     extract_panel_default(panel_lines, "value_to_sort_the_output_dataset"),
-    "p-value"
+    "t-statistic"
   )
   expect_equal(
     extract_panel_default(panel_lines, "num_features_to_label"),
-    "30"
+    "20"
   )
+  expect_equal(extract_panel_default(panel_lines, "label_font_size"), "5")
+  expect_equal(extract_panel_default(panel_lines, "custom_label_color"), "black")
+  expect_equal(extract_panel_default(panel_lines, "x_axis_limit"), "5")
+  expect_equal(extract_panel_default(panel_lines, "y_axis_limit"), "10")
   expect_equal(extract_panel_default(panel_lines, "title"), "Volcano Plots")
   expect_equal(
     extract_panel_default(panel_lines, "plot_filename"),
@@ -82,12 +102,9 @@ test_that("Code Ocean panel preserves enhanced volcano defaults", {
 test_that("Code Ocean boolean controls are TRUE/FALSE lists", {
   panel_lines <- read_repo_file(".codeocean", "app-panel.json")
 
-  expect_boolean_list_parameter(
-    panel_lines,
-    "use_only_addition_labels",
-    "FALSE"
-  )
-  expect_boolean_list_parameter(panel_lines, "is_red", "TRUE")
+  expect_boolean_list_parameter(panel_lines, "label_features", "FALSE")
+  expect_boolean_list_parameter(panel_lines, "use_default_x_axis_limit", "TRUE")
+  expect_boolean_list_parameter(panel_lines, "use_default_y_axis_limit", "TRUE")
   expect_boolean_list_parameter(panel_lines, "use_custom_lab", "FALSE")
   expect_boolean_list_parameter(panel_lines, "interactive_plots", "FALSE")
 })

@@ -46,38 +46,38 @@ parser$add_argument(
 parser$add_argument(
   "--value_to_sort_the_output_dataset",
   type = "character",
-  default = "p-value",
-  help = "How to sort output: 'fold-change' or 'p-value'"
+  default = "t-statistic",
+  help = "How to sort output: 'fold-change', 'p-value', or 't-statistic'"
 )
 parser$add_argument(
   "--num_features_to_label",
   type = "integer",
-  default = 30,
+  default = 20,
   help = "Number of top features to label"
 )
 parser$add_argument(
-  "--use_only_addition_labels",
+  "--label_features",
   type = "logical",
   default = FALSE,
-  help = "Use only additional labels, ignore top features"
+  help = "Label only features from custom_gene_list"
 )
 parser$add_argument(
-  "--additional_labels",
+  "--custom_gene_list",
   type = "character",
   default = "",
-  help = "Comma-separated feature names to label"
+  help = "Comma-separated feature names or IDs to label"
 )
 parser$add_argument(
-  "--is_red",
-  type = "logical",
-  default = TRUE,
-  help = "Highlight significant points in red"
-)
-parser$add_argument(
-  "--lab_size",
+  "--label_font_size",
   type = "double",
-  default = 4,
+  default = 5,
   help = "Size of labels in plot"
+)
+parser$add_argument(
+  "--custom_label_color",
+  type = "character",
+  default = "black",
+  help = "Color for labels from custom_gene_list"
 )
 parser$add_argument(
   "--change_sig_name",
@@ -104,16 +104,28 @@ parser$add_argument(
   help = "Use custom labels"
 )
 parser$add_argument(
-  "--ylim",
-  type = "double",
-  default = 0,
-  help = "Y-axis limits"
+  "--use_default_x_axis_limit",
+  type = "logical",
+  default = TRUE,
+  help = "Use the default X-axis limit"
 )
 parser$add_argument(
-  "--custom_xlim",
-  type = "character",
-  default = "",
-  help = "Custom X-axis limits"
+  "--x_axis_limit",
+  type = "double",
+  default = 5,
+  help = "Custom X-axis limit, used when default X-axis limit is disabled"
+)
+parser$add_argument(
+  "--use_default_y_axis_limit",
+  type = "logical",
+  default = TRUE,
+  help = "Use the default Y-axis limit"
+)
+parser$add_argument(
+  "--y_axis_limit",
+  type = "double",
+  default = 10,
+  help = "Custom Y-axis limit, used when default Y-axis limit is disabled"
 )
 parser$add_argument(
   "--axis_lab_size",
@@ -173,16 +185,18 @@ plot_volcano_enhanced(
   change_threshold = args$change_threshold,
   value_to_sort_the_output_dataset = args$value_to_sort_the_output_dataset,
   num_features_to_label = args$num_features_to_label,
-  use_only_addition_labels = args$use_only_addition_labels,
-  additional_labels = args$additional_labels,
-  is_red = args$is_red,
-  lab_size = args$lab_size,
+  label_features = args$label_features,
+  custom_gene_list = args$custom_gene_list,
+  label_font_size = args$label_font_size,
+  custom_label_color = args$custom_label_color,
   change_sig_name = args$change_sig_name,
   change_lfc_name = args$change_lfc_name,
   title = args$title,
   use_custom_lab = args$use_custom_lab,
-  ylim = args$ylim,
-  custom_xlim = args$custom_xlim,
+  use_default_x_axis_limit = args$use_default_x_axis_limit,
+  x_axis_limit = args$x_axis_limit,
+  use_default_y_axis_limit = args$use_default_y_axis_limit,
+  y_axis_limit = args$y_axis_limit,
   axis_lab_size = args$axis_lab_size,
   point_size = args$point_size,
   image_width = args$image_width,

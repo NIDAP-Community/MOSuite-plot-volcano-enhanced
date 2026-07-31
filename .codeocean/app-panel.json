@@ -91,10 +91,10 @@
 			"category": "EzTg1ivlFDHEy9PI",
 			"name": "Sort output by",
 			"param_name": "value_to_sort_the_output_dataset",
-			"description": "How to sort output dataset: 'p-value' or 'fold-change'",
+			"description": "How to sort output dataset: 'p-value', 'fold-change', or 't-statistic'",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "p-value"
+			"default_value": "t-statistic"
 		},
 		{
 			"id": "num_features_to_label_id",
@@ -104,14 +104,14 @@
 			"description": "Number of top features/genes to label in the volcano plot",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "30"
+			"default_value": "20"
 		},
 		{
-			"id": "use_only_addition_labels_id",
+			"id": "label_features_id",
 			"category": "EzTg1ivlFDHEy9PI",
-			"name": "Use only additional labels",
-			"param_name": "use_only_addition_labels",
-			"description": "If TRUE, only the additional labels specified will be used, ignoring the top features",
+			"name": "Label selected features only",
+			"param_name": "label_features",
+			"description": "If TRUE, label only features from custom_gene_list",
 			"type": "list",
 			"value_type": "string",
 			"default_value": "FALSE",
@@ -121,23 +121,33 @@
 			]
 		},
 		{
-			"id": "additional_labels_id",
+			"id": "custom_gene_list_id",
 			"category": "EzTg1ivlFDHEy9PI",
-			"name": "Additional feature labels",
-			"param_name": "additional_labels",
-			"description": "Comma-separated feature names or IDs to include in the volcano plot",
+			"name": "Custom gene list",
+			"param_name": "custom_gene_list",
+			"description": "Comma-separated feature names or IDs to label",
 			"type": "text",
 			"value_type": "string"
 		},
 		{
-			"id": "lab_size_id",
+			"id": "label_font_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "Label size",
-			"param_name": "lab_size",
+			"name": "Label font size",
+			"param_name": "label_font_size",
 			"description": "Size of the labels in the volcano plot",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "4"
+			"default_value": "5"
+		},
+		{
+			"id": "custom_label_color_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Custom label color",
+			"param_name": "custom_label_color",
+			"description": "Color for labels from custom_gene_list",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "black"
 		},
 		{
 			"id": "change_sig_name_id",
@@ -184,23 +194,52 @@
 			]
 		},
 		{
-			"id": "ylim_id",
+			"id": "use_default_x_axis_limit_id",
 			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "Y-axis limit",
-			"param_name": "ylim",
-			"description": "Y-axis limits for the plot (0 = auto)",
-			"type": "text",
+			"name": "Use default X-axis limit",
+			"param_name": "use_default_x_axis_limit",
+			"description": "If TRUE, use the default X-axis limit",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "0"
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
-			"id": "custom_xlim_id",
+			"id": "x_axis_limit_id",
 			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "Custom X-axis limits",
-			"param_name": "custom_xlim",
-			"description": "Custom X-axis limits (e.g., -5,5 or empty for auto)",
+			"name": "X-axis limit",
+			"param_name": "x_axis_limit",
+			"description": "Custom X-axis limit, used when default X-axis limit is disabled",
 			"type": "text",
-			"value_type": "string"
+			"value_type": "string",
+			"default_value": "5"
+		},
+		{
+			"id": "use_default_y_axis_limit_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Use default Y-axis limit",
+			"param_name": "use_default_y_axis_limit",
+			"description": "If TRUE, use the default Y-axis limit",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
+		},
+		{
+			"id": "y_axis_limit_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Y-axis limit",
+			"param_name": "y_axis_limit",
+			"description": "Custom Y-axis limit, used when default Y-axis limit is disabled",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "10"
 		},
 		{
 			"id": "axis_lab_size_id",
@@ -211,20 +250,6 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "24"
-		},
-		{
-			"id": "is_red_id",
-			"category": "PlotStyling",
-			"name": "Highlight significant points in red",
-			"param_name": "is_red",
-			"description": "If TRUE, highlights points meeting significance and fold change criteria in red",
-			"type": "list",
-			"value_type": "string",
-			"default_value": "TRUE",
-			"extra_data": [
-				"TRUE",
-				"FALSE"
-			]
 		},
 		{
 			"id": "point_size_id",
