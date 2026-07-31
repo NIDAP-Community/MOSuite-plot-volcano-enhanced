@@ -189,16 +189,6 @@
 			"default_value": "red2"
 		},
 		{
-			"id": "color_of_signif_threshold_line_id",
-			"category": "VisualizationDEGGroups",
-			"name": "Significance threshold line color",
-			"param_name": "color_of_signif_threshold_line",
-			"description": "Color of the horizontal significance cutoff line drawn on the volcano plot.",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "black"
-		},
-		{
 			"id": "color_of_logfold_change_threshold_line_id",
 			"category": "VisualizationDEGGroups",
 			"name": "Fold change threshold color",
@@ -207,6 +197,16 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "forestgreen"
+		},
+		{
+			"id": "color_of_signif_threshold_line_id",
+			"category": "VisualizationDEGGroups",
+			"name": "Significance threshold line color",
+			"param_name": "color_of_signif_threshold_line",
+			"description": "Color of the significance cutoff lines drawn on the volcano plot.",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "black"
 		},
 		{
 			"id": "title_id",
