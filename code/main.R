@@ -116,18 +116,6 @@ parser$add_argument(
   help = "Custom X-axis limits"
 )
 parser$add_argument(
-  "--xlim_additional",
-  type = "double",
-  default = 0,
-  help = "Additional space for X-axis limits"
-)
-parser$add_argument(
-  "--ylim_additional",
-  type = "double",
-  default = 0,
-  help = "Additional space for Y-axis limits"
-)
-parser$add_argument(
   "--axis_lab_size",
   type = "double",
   default = 24,
@@ -195,8 +183,6 @@ plot_volcano_enhanced(
   use_custom_lab = args$use_custom_lab,
   ylim = args$ylim,
   custom_xlim = args$custom_xlim,
-  xlim_additional = args$xlim_additional,
-  ylim_additional = args$ylim_additional,
   axis_lab_size = args$axis_lab_size,
   point_size = args$point_size,
   image_width = args$image_width,

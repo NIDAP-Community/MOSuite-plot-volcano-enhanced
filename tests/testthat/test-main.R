@@ -32,8 +32,6 @@ test_that("enhanced volcano capsule keeps expected CLI parameter contract", {
     "use_custom_lab",
     "ylim",
     "custom_xlim",
-    "xlim_additional",
-    "ylim_additional",
     "axis_lab_size",
     "point_size",
     "image_width",

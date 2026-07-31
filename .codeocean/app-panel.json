@@ -203,26 +203,6 @@
 			"value_type": "string"
 		},
 		{
-			"id": "xlim_additional_id",
-			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "X-axis limit padding",
-			"param_name": "xlim_additional",
-			"description": "Additional space to add to the X-axis limits",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "0"
-		},
-		{
-			"id": "ylim_additional_id",
-			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "Y-axis limit padding",
-			"param_name": "ylim_additional",
-			"description": "Additional space to add to the Y-axis limits",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "0"
-		},
-		{
 			"id": "axis_lab_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Axis label size",
