@@ -159,26 +159,6 @@
 			"default_value": "2"
 		},
 		{
-			"id": "color_of_non_significant_features_id",
-			"category": "VisualizationDEGGroups",
-			"name": "Non-significant feature color",
-			"param_name": "color_of_non_significant_features",
-			"description": "Color for features that do not meet either the significance threshold or the fold-change threshold.",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "grey30"
-		},
-		{
-			"id": "color_of_features_meeting_only_signif_threshold_id",
-			"category": "VisualizationDEGGroups",
-			"name": "Significance-only feature color",
-			"param_name": "color_of_features_meeting_only_signif_threshold",
-			"description": "Color for features that meet the p-value or adjusted p-value threshold but do not meet the fold-change threshold.",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "royalblue"
-		},
-		{
 			"id": "color_for_features_meeting_pvalue_and_foldchange_thresholds_id",
 			"category": "VisualizationDEGGroups",
 			"name": "Significance and fold change feature color",
@@ -191,12 +171,32 @@
 		{
 			"id": "color_of_logfold_change_threshold_line_id",
 			"category": "VisualizationDEGGroups",
-			"name": "Fold change threshold color",
+			"name": "Fold change only threshold color",
 			"param_name": "color_of_logfold_change_threshold_line",
 			"description": "Color for features that meet only the log fold-change threshold and do not meet the significance threshold.",
 			"type": "text",
 			"value_type": "string",
 			"default_value": "forestgreen"
+		},
+		{
+			"id": "color_of_features_meeting_only_signif_threshold_id",
+			"category": "VisualizationDEGGroups",
+			"name": "Significance-only feature color",
+			"param_name": "color_of_features_meeting_only_signif_threshold",
+			"description": "Color for features that meet the p-value or adjusted p-value threshold but do not meet the fold-change threshold.",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "royalblue"
+		},
+		{
+			"id": "color_of_non_significant_features_id",
+			"category": "VisualizationDEGGroups",
+			"name": "Non-significant feature color",
+			"param_name": "color_of_non_significant_features",
+			"description": "Color for features that do not meet either the significance threshold or the fold-change threshold.",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "grey30"
 		},
 		{
 			"id": "color_of_signif_threshold_line_id",
