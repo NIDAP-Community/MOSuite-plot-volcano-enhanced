@@ -46,38 +46,56 @@ parser$add_argument(
 parser$add_argument(
   "--value_to_sort_the_output_dataset",
   type = "character",
-  default = "p-value",
-  help = "How to sort output: 'fold-change' or 'p-value'"
+  default = "t-statistic",
+  help = "How to sort output: 'fold-change', 'p-value', or 't-statistic'"
 )
 parser$add_argument(
   "--num_features_to_label",
   type = "integer",
-  default = 30,
+  default = 20,
   help = "Number of top features to label"
 )
 parser$add_argument(
-  "--use_only_addition_labels",
+  "--label_features",
   type = "logical",
   default = FALSE,
-  help = "Use only additional labels, ignore top features"
+  help = "Label only features from custom_gene_list"
 )
 parser$add_argument(
-  "--additional_labels",
+  "--custom_gene_list",
   type = "character",
   default = "",
-  help = "Comma-separated feature names to label"
+  help = "Comma-separated feature names or IDs to label"
 )
 parser$add_argument(
-  "--is_red",
+  "--label_significant_features_only",
   type = "logical",
   default = TRUE,
-  help = "Highlight significant points in red"
+  help = "Label only features that meet the significance and fold change thresholds"
 )
 parser$add_argument(
-  "--lab_size",
+  "--label_font_size",
   type = "double",
-  default = 4,
+  default = 5,
   help = "Size of labels in plot"
+)
+parser$add_argument(
+  "--default_label_color",
+  type = "character",
+  default = "black",
+  help = "Color for automatically selected labels"
+)
+parser$add_argument(
+  "--custom_label_color",
+  type = "character",
+  default = "black",
+  help = "Color for labels from custom_gene_list"
+)
+parser$add_argument(
+  "--draw_connectors",
+  type = "logical",
+  default = FALSE,
+  help = "Draw connector lines from labels to their points"
 )
 parser$add_argument(
   "--change_sig_name",
@@ -98,34 +116,40 @@ parser$add_argument(
   help = "Title of the plot"
 )
 parser$add_argument(
+  "--title_font_size",
+  type = "double",
+  default = 24,
+  help = "Size of the plot title"
+)
+parser$add_argument(
   "--use_custom_lab",
   type = "logical",
   default = FALSE,
   help = "Use custom labels"
 )
 parser$add_argument(
-  "--ylim",
-  type = "double",
-  default = 0,
-  help = "Y-axis limits"
+  "--use_default_x_axis_limit",
+  type = "logical",
+  default = TRUE,
+  help = "Use the default X-axis limit"
 )
 parser$add_argument(
-  "--custom_xlim",
-  type = "character",
-  default = "",
-  help = "Custom X-axis limits"
+  "--x_axis_limit",
+  type = "double",
+  default = 5,
+  help = "Custom X-axis limit, used when default X-axis limit is disabled"
 )
 parser$add_argument(
-  "--xlim_additional",
-  type = "double",
-  default = 0,
-  help = "Additional space for X-axis limits"
+  "--use_default_y_axis_limit",
+  type = "logical",
+  default = TRUE,
+  help = "Use the default Y-axis limit"
 )
 parser$add_argument(
-  "--ylim_additional",
+  "--y_axis_limit",
   type = "double",
-  default = 0,
-  help = "Additional space for Y-axis limits"
+  default = 10,
+  help = "Custom Y-axis limit, used when default Y-axis limit is disabled"
 )
 parser$add_argument(
   "--axis_lab_size",
@@ -134,10 +158,46 @@ parser$add_argument(
   help = "Size of axis labels"
 )
 parser$add_argument(
+  "--axis_tick_lab_size",
+  type = "double",
+  default = 16,
+  help = "Size of axis tick labels"
+)
+parser$add_argument(
   "--point_size",
   type = "double",
   default = 2,
   help = "Size of points in plot"
+)
+parser$add_argument(
+  "--color_of_signif_threshold_line",
+  type = "character",
+  default = "black",
+  help = "Color of the significance threshold line"
+)
+parser$add_argument(
+  "--color_of_non_significant_features",
+  type = "character",
+  default = "grey30",
+  help = "Color of non-significant features"
+)
+parser$add_argument(
+  "--color_of_logfold_change_threshold_line",
+  type = "character",
+  default = "forestgreen",
+  help = "Color of features meeting only the fold change threshold"
+)
+parser$add_argument(
+  "--color_of_features_meeting_only_signif_threshold",
+  type = "character",
+  default = "royalblue",
+  help = "Color of features meeting only the significance threshold"
+)
+parser$add_argument(
+  "--color_for_features_meeting_pvalue_and_foldchange_thresholds",
+  type = "character",
+  default = "red2",
+  help = "Color of features meeting both significance and fold change thresholds"
 )
 parser$add_argument(
   "--image_width",
@@ -185,20 +245,30 @@ plot_volcano_enhanced(
   change_threshold = args$change_threshold,
   value_to_sort_the_output_dataset = args$value_to_sort_the_output_dataset,
   num_features_to_label = args$num_features_to_label,
-  use_only_addition_labels = args$use_only_addition_labels,
-  additional_labels = args$additional_labels,
-  is_red = args$is_red,
-  lab_size = args$lab_size,
+  label_features = args$label_features,
+  custom_gene_list = args$custom_gene_list,
+  label_significant_features_only = args$label_significant_features_only,
+  label_font_size = args$label_font_size,
+  default_label_color = args$default_label_color,
+  custom_label_color = args$custom_label_color,
+  draw_connectors = args$draw_connectors,
   change_sig_name = args$change_sig_name,
   change_lfc_name = args$change_lfc_name,
   title = args$title,
+  title_font_size = args$title_font_size,
   use_custom_lab = args$use_custom_lab,
-  ylim = args$ylim,
-  custom_xlim = args$custom_xlim,
-  xlim_additional = args$xlim_additional,
-  ylim_additional = args$ylim_additional,
+  use_default_x_axis_limit = args$use_default_x_axis_limit,
+  x_axis_limit = args$x_axis_limit,
+  use_default_y_axis_limit = args$use_default_y_axis_limit,
+  y_axis_limit = args$y_axis_limit,
   axis_lab_size = args$axis_lab_size,
+  axis_tick_lab_size = args$axis_tick_lab_size,
   point_size = args$point_size,
+  color_of_signif_threshold_line = args$color_of_signif_threshold_line,
+  color_of_non_significant_features = args$color_of_non_significant_features,
+  color_of_logfold_change_threshold_line = args$color_of_logfold_change_threshold_line,
+  color_of_features_meeting_only_signif_threshold = args$color_of_features_meeting_only_signif_threshold,
+  color_for_features_meeting_pvalue_and_foldchange_thresholds = args$color_for_features_meeting_pvalue_and_foldchange_thresholds,
   image_width = args$image_width,
   image_height = args$image_height,
   dpi = args$dpi,

@@ -2,6 +2,7 @@
 
 ## Development version
 
+- Update enhanced volcano app panel visualization parameters and embedded MOSuite source for MOSuite v0.4.1 (#4, @phoman14).
 - Improved the Code Ocean parameter UI for the plot volcano enhanced capsule. (#1, @phoman14)
 - Use MOSuite v0.3.2. (#2, @kelly-sovacool)
 
