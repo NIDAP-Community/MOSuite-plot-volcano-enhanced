@@ -236,7 +236,7 @@ args <- parser$parse_args()
 moo <- load_moo_from_data_dir()
 
 # run MOSuite
-plot_volcano_enhanced(
+volc_enh_dat <- plot_volcano_enhanced(
   moo,
   feature_id_colname = args$feature_id_colname,
   signif_colname = parse_optional_vector(args$signif_colname),
