@@ -201,15 +201,15 @@ parser$add_argument(
 )
 parser$add_argument(
   "--image_width",
-  type = "integer",
-  default = 3000,
-  help = "Output image width in pixels"
+  type = "double",
+  default = 10,
+  help = "Output image width in inches"
 )
 parser$add_argument(
   "--image_height",
-  type = "integer",
-  default = 3000,
-  help = "Output image height in pixels"
+  type = "double",
+  default = 10,
+  help = "Output image height in inches"
 )
 parser$add_argument(
   "--dpi",
@@ -236,7 +236,7 @@ args <- parser$parse_args()
 moo <- load_moo_from_data_dir()
 
 # run MOSuite
-plot_volcano_enhanced(
+volc_enh_dat <- plot_volcano_enhanced(
   moo,
   feature_id_colname = args$feature_id_colname,
   signif_colname = parse_optional_vector(args$signif_colname),
