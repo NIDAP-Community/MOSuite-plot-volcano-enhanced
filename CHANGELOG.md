@@ -2,6 +2,8 @@
 
 ## Development version
 
+- Use MOSuite v0.5.0 (#7, @kelly-sovacool)
+
 ## v3.0
 
 - Update enhanced volcano app panel visualization parameters and embedded MOSuite source for MOSuite v0.4.1 (#4, @phoman14).
