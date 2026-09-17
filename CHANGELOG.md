@@ -1,6 +1,6 @@
 # Code Ocean capsule - MOSuite - Plot Volcano Enhanced
 
-## Development version
+## v4.0
 
 - Use MOSuite v0.5.0 (#7, @kelly-sovacool)
 - Use physical inch dimensions with 10 x 10 inch defaults and 300 DPI for saved volcano output. (#5, @TJoshMeyer)
