@@ -438,10 +438,5 @@
 			"value_type": "string",
 			"default_value": "10"
 		}
-	],
-	"results": [
-		{
-			"file_name": "figures/diff/volcano_enhanced.png"
-		}
 	]
 }
