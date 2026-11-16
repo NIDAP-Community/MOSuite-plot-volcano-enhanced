@@ -43,11 +43,11 @@ test_that("Code Ocean panel preserves enhanced volcano defaults", {
 
   expect_equal(
     extract_panel_default(panel_lines, "signif_colname"),
-    "B-A_adjpval,B-C_adjpval"
+    ""
   )
   expect_equal(
     extract_panel_default(panel_lines, "change_colname"),
-    "B-A_logFC,B-C_logFC"
+    ""
   )
   expect_equal(
     extract_panel_default(panel_lines, "value_to_sort_the_output_dataset"),

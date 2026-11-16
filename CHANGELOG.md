@@ -2,6 +2,12 @@
 
 ## development version
 
+- Accept OMIX DEG CSV/TSV/TXT alongside MOO input, with MOO-first automatic
+  discovery and explicit input type/file controls.
+- Automatically detect contrast columns by default instead of hardcoded
+  example contrasts; explicit selections remain supported.
+- Add MOO/table plotting parity tests without changing managed MOSuite source.
+
 ## v4.0
 
 - Use MOSuite v0.5.0 (#7, @kelly-sovacool)
