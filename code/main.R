@@ -235,7 +235,9 @@ args <- parser$parse_args()
 
 # load multiOmicDataSet from data directory
 deg_input <- load_deg_input(args$feature_id_colname)
-if (!is.data.frame(deg_input)) deg_input <- join_dfs_wide(deg_input@analyses$diff)
+if (!is.data.frame(deg_input)) {
+  deg_input <- join_dfs_wide(deg_input@analyses$diff)
+}
 
 # run MOSuite
 volc_enh_dat <- plot_volcano_enhanced(
