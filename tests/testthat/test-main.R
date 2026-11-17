@@ -8,6 +8,8 @@ test_that("Code Ocean panel uses named parameters accepted by main.R", {
     info = "Code Ocean should pass parameters by name to main.R"
   )
   expect_same_values(panel_args, main_args)
+  expect_false(any(panel_args %in% c("input_type", "input_file")))
+  expect_false(any(main_args %in% c("input_type", "input_file")))
 })
 
 test_that("enhanced volcano capsule wires every app panel parameter into main.R", {
