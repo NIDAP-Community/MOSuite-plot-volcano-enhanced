@@ -3,7 +3,7 @@
 ## development version
 
 - Accept MOO RDS or the specifically named `DEG_Analysis.csv`, automatically
-  preferring MOO when both formats are present.
+  preferring MOO when both formats are present. (#10)
 - Automatically detect contrast columns by default instead of hardcoded
   example contrasts; explicit selections remain supported.
 - Keep input discovery controls out of the user-facing panel and restore the
