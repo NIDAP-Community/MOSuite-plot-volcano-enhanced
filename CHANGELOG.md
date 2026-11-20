@@ -2,6 +2,14 @@
 
 ## development version
 
+- Accept MOO RDS or the specifically named `DEG_Analysis.csv`, automatically
+  preferring MOO when both formats are present. (#10)
+- Automatically detect contrast columns by default instead of hardcoded
+  example contrasts; explicit selections remain supported.
+- Keep input discovery controls out of the user-facing panel and restore the
+  capsule's minimal README.
+- Add MOO/table plotting parity tests without changing managed MOSuite source.
+
 ## v4.0
 
 - Use MOSuite v0.5.0 (#7, @kelly-sovacool)

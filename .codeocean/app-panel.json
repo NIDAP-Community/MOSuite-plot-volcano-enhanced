@@ -8,16 +8,11 @@
 	"datasets": [
 		{
 			"id": "318a2347-25cb-4210-9c1b-f9736f450deb",
-			"name": "multiOmicDataSet"
+			"name": "Differential expression results",
+			"description": "Attach a MOSuite DEG result or a CSV named DEG_Analysis.csv. The capsule detects the supported input automatically."
 		}
 	],
 	"categories": [
-		{
-			"id": "InputDataParameters",
-			"name": "Input Data Parameters",
-			"description": "Options for defining input data",
-			"icon": "📁"
-		},
 		{
 			"id": "Basic",
 			"name": "Basic",
@@ -60,7 +55,7 @@
 			"description": "Comma-separated significance column names, one per contrast. If left blank in the MOSuite function, matching columns are auto-detected by checking for _adjpval first, then _pval, for each fold-change contrast. Example: B-A_adjpval,B-C_adjpval.",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "B-A_adjpval,B-C_adjpval"
+			"default_value": ""
 		},
 		{
 			"id": "signif_threshold_id",
@@ -80,7 +75,7 @@
 			"description": "Comma-separated log fold-change column names, one per contrast. If left blank in the MOSuite function, all columns ending in _logFC are auto-detected. Example: B-A_logFC,B-C_logFC.",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "B-A_logFC,B-C_logFC"
+			"default_value": ""
 		},
 		{
 			"id": "change_threshold_id",

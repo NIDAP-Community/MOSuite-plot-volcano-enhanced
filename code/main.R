@@ -12,6 +12,7 @@ setup_capsule_environment()
 
 # parse CLI arguments
 parser <- ArgumentParser()
+source("deg-input.R")
 
 parser$add_argument(
   "--feature_id_colname",
@@ -22,7 +23,7 @@ parser$add_argument(
 parser$add_argument(
   "--signif_colname",
   type = "character",
-  default = "B-A_adjpval,B-C_adjpval",
+  default = NULL,
   help = "Column names of significance values (comma-separated)"
 )
 parser$add_argument(
@@ -34,7 +35,7 @@ parser$add_argument(
 parser$add_argument(
   "--change_colname",
   type = "character",
-  default = "B-A_logFC,B-C_logFC",
+  default = NULL,
   help = "Column names of fold change values (comma-separated)"
 )
 parser$add_argument(
@@ -233,11 +234,14 @@ parser$add_argument(
 args <- parser$parse_args()
 
 # load multiOmicDataSet from data directory
-moo <- load_moo_from_data_dir()
+deg_input <- load_deg_input(args$feature_id_colname)
+if (!is.data.frame(deg_input)) {
+  deg_input <- join_dfs_wide(deg_input@analyses$diff)
+}
 
 # run MOSuite
 volc_enh_dat <- plot_volcano_enhanced(
-  moo,
+  deg_input,
   feature_id_colname = args$feature_id_colname,
   signif_colname = parse_optional_vector(args$signif_colname),
   signif_threshold = args$signif_threshold,
